@@ -61,7 +61,7 @@ public class AuthFilter implements Filter {
             Set<String> roleIdentifier = myCustomRealm.getRoleNamesForUser(dataSource.getConnection(), authRequest.getUsername());
             //Set<String> permissions = myCustomRealm.getPermissions(dataSource.getConnection(), authRequest.getUsername(),roleIdentifier);
             if (subject.isAuthenticated() && subject.hasRole(roleIdentifier.stream().toArray()[0].toString())) {
-                logger.info("user authenticated!!");
+                logger.info("user authenticated !!");
                 //create a http servlet response
                 HttpServletResponse response = (HttpServletResponse) servletResponse;
                 //continue the filter chain
